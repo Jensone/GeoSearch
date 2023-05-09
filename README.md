@@ -2,7 +2,7 @@
 
 ---
 
-![HTML](https://img.shields.io/badge/HTML-5-orange) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![PHP](https://img.shields.io/badge/PHP-7.4.3-green) ![SASS](https://img.shields.io/badge/SASS-1.26.10-red)
+![HTML](https://img.shields.io/badge/HTML-5-orange) ![CSS](https://img.shields.io/badge/CSS-3-blue) ![PHP](https://img.shields.io/badge/PHP-8-green) ![SASS](https://img.shields.io/badge/SASS-1.26.10-red)
 
 # GeoSearch
 
