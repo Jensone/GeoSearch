@@ -1,10 +1,10 @@
 /* Reset CSS */
 /* -------------------------------------------------------------- */
 
-* 
-  box-sizing: border-box
-  margin: 0
-  padding: 0
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
 
 /* Texts */
 /* -------------------------------------------------------------- */
@@ -18,9 +18,11 @@ a
 /* Global CSS */
 /* -------------------------------------------------------------- */
 body
-  font-family: 'Poppins', sans-serif
-  background: url('../img/bg.svg') no-repeat center center/cover
-.container 
+    height: 100vh
+    font-family: 'Poppins', sans-serif
+    background: url('../img/bg.svg') no-repeat center center/cover
+    background-attachment: fixed
+.container
     position: relative
     height: 100vh
 nav
@@ -50,13 +52,15 @@ aside
         transform: rotate(-90deg)
         color: rgba(0, 0, 0, 0.4)
 main
-    height: 100vh
     padding: 80px 100px 20px 100px
+    overflow-y: scroll
+    -ms-overflow-style: none
+    scrollbar-width: none
+main::-webkit-scrollbar
+    display: none
 footer
     text-align: center
     padding: 1rem
-    background: linear-gradient(45deg, #e002e4, #016bcf)
-    color: #ffffff
 
 /* Custom */
 /* -------------------------------------------------------------- */
@@ -66,7 +70,6 @@ footer
     justify-content: center
     align-items: center
     min-height: 300px
-    
 .card
     width: 300px
     height: 100px
@@ -89,7 +92,7 @@ footer
     font-size: 6vw
     font-weight: 800
     margin: 3rem 0
-.continent-subtitle 
+.continent-subtitle
     background: rgb(0,0,0)
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,1) 49%, rgba(0,0,0,1) 51%, rgba(0,0,0,0) 52%, rgba(0,0,0,0) 100%)
 .continent-subtitle h3
@@ -97,6 +100,41 @@ footer
     border-radius: 5rem
     width: fit-content
     padding: 0.5rem 1rem
+.countries
+    display: flex
+    gap: 1rem
+    margin: 1rem 0
+    list-style: none
+    overflow-x: scroll
+    -ms-overflow-style: none
+    scrollbar-width: none
+.countries::-webkit-scrollbar
+    display: none
+.countries li
+    margin: 2rem
+    height: 200px
+    min-width: 300px
+    box-shadow: 0 0 20px rgba(0,0,0,0.1)
+    background-size: cover !important
+    background-repeat: no-repeat !important
+    background-position: center !important
+    border-radius: 1vw
+    display: grid
+    place-items: center
+.countries li a
+    width: 100%
+    height: 100%
+    display: grid
+    place-items: center
+    border-radius: 1vw
+    font-size: 1.5rem
+    padding: 0.5rem
+    color: transparent
+.countries li a:hover
+    background: rgba(0,0,0,0.5)
+    color: #ffffff
+
+
 
 /* Media Queries */
 /* -------------------------------------------------------------- */
@@ -114,4 +152,3 @@ footer
     .cards
         flex-direction: column
         align-items: center
-    

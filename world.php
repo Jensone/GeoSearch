@@ -1,77 +1,66 @@
-<?php include 'partials/_head.html.php'; ?>
 
+<?php
 
+require 'functions/restcountries.php';
+include 'partials/_head.html.php'; 
 
+?>
 
+<h1 class="big-text">Tous les pays du monde</h1>
 
-
-
-
-<style>
-    .continent-subtitle {
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,1) 49%, rgba(0,0,0,1) 51%, rgba(0,0,0,0) 52%, rgba(0,0,0,0) 100%);
-
-    }
-    .continent-subtitle h3 {
-        background: #ffffff;
-        border-radius: 5rem;
-        width: fit-content;
-        padding: 0.5rem 1rem;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>Tous les pays du monde</h1>
+<!-- L'Europe - Début -->
 <div class="continent-subtitle">
     <h3>Europe</h3>
 </div>
-
-<ul>
-    <li>
-        <a href="">
-            <img src="" alt="">
-            France
-        </a>
-    </li>
-    <li>
-        <a href="">
-            <img src="" alt="">
-            Espagne
-        </a>
-    </li>
-    <li>
-        <a href="">
-            <img src="" alt="">
-            Portugal
-        </a>
-    </li>
-    <li>
-        <a href="">
-            <img src="" alt="">
-            Royaume-Uni
-        </a>
-    </li>
+<ul class="countries">
+    <?php listCountriesByContinent('europe'); ?>
 </ul>
+<!-- L'Europe - Fin -->
+
+<!-- L'Asie - Début -->
+<div class="continent-subtitle">
+    <h3>Asie</h3>
+</div>
+<ul class="countries">
+    <?php listCountriesByContinent('asia'); ?>
+</ul>
+<!-- L'Asie - Fin -->
+
+<!-- Les Amériques - Début -->
+<div class="continent-subtitle">
+    <h3>Amériques</h3>
+</div>
+<ul class="countries">
+    <?php listCountriesByContinent('america'); ?>
+</ul>
+<!-- Les Amériques - Fin -->
+
+<!-- L'Afrique - Début -->
+<div class="continent-subtitle">
+    <h3>Africa</h3>
+</div>
+<ul class="countries">
+    <?php listCountriesByContinent('africa'); ?>
+</ul>
+<!-- L'Afrique - Fin -->
+
+<!-- L'Océanie - Début -->
+<div class="continent-subtitle">
+    <h3>Océanie</h3>
+</div>
+<ul class="countries">
+    <?php listCountriesByContinent('oceania'); ?>
+</ul>
+<!-- L'Océanie - Fin -->
+
+<!-- L'Antarctique - Début -->
+<div class="continent-subtitle">
+    <h3>Antarctique</h3>
+</div>
+<ul class="countries">
+    <?php listCountriesByContinent('antarctic'); ?>
+</ul>
+<!-- L'Antarctique - Fin -->
+
 
 <?php include 'partials/_footer.html.php'; ?>
