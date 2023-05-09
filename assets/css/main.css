@@ -177,6 +177,30 @@ footer {
   color: #ffffff;
 }
 
+.country {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.country img {
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.country div ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+.country div ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.country div ul li svg {
+  display: block;
+}
+
 /* Media Queries */
 /* -------------------------------------------------------------- */
 @media (width <= 768px) {

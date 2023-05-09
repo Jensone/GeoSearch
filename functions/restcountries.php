@@ -4,7 +4,6 @@
  * Définition des fonctions
  */
 
-
 // Récupération de la liste des pays par continent
 
 function listCountriesByContinent($continent) {
@@ -23,3 +22,11 @@ function listCountriesByContinent($continent) {
     }
 }
 
+function getCountryByCodeName($cca2) {
+    $url = "https://restcountries.com/v3.1/alpha/$cca2"; // URL de l'API
+    $json = file_get_contents($url); // Récupération du contenu JSON
+    $country = json_decode($json, true); // Décodage du JSON en tableau associatif PHP
+
+    define('COUNTRY', $country); // Retourne le tableau associatif PHP pour utiliser les données dans le front
+    // var_dump(COUNTRY);
+}
