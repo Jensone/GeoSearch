@@ -1,19 +1,21 @@
-
 <?php
 
 require 'functions/restcountries.php';
-include 'partials/_head.html.php'; 
+include 'partials/_head.html.php';
 
 ?>
 
 <h1 class="big-text">Tous les pays du monde</h1>
+
+<h2>Une base de données de <?php getTotalCountries(); echo TOTAL ?> pays</h2>
+<br>
 
 <!-- L'Europe - Début -->
 <div class="continent-subtitle">
     <h3>Europe</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('europe'); ?>
+    <?php listCountriesByRegion('europe'); ?>
 </ul>
 <!-- L'Europe - Fin -->
 
@@ -22,7 +24,7 @@ include 'partials/_head.html.php';
     <h3>Asie</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('asia'); ?>
+    <?php listCountriesByRegion('asia'); ?>
 </ul>
 <!-- L'Asie - Fin -->
 
@@ -31,7 +33,7 @@ include 'partials/_head.html.php';
     <h3>Amériques</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('america'); ?>
+    <?php listCountriesByRegion('america'); ?>
 </ul>
 <!-- Les Amériques - Fin -->
 
@@ -40,7 +42,7 @@ include 'partials/_head.html.php';
     <h3>Africa</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('africa'); ?>
+    <?php listCountriesByRegion('africa'); ?>
 </ul>
 <!-- L'Afrique - Fin -->
 
@@ -49,7 +51,7 @@ include 'partials/_head.html.php';
     <h3>Océanie</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('oceania'); ?>
+    <?php listCountriesByRegion('oceania'); ?>
 </ul>
 <!-- L'Océanie - Fin -->
 
@@ -58,7 +60,7 @@ include 'partials/_head.html.php';
     <h3>Antarctique</h3>
 </div>
 <ul class="countries">
-    <?php listCountriesByContinent('antarctic'); ?>
+    <?php listCountriesByRegion('antarctic'); ?>
 </ul>
 <!-- L'Antarctique - Fin -->
 
