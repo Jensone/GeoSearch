@@ -13,19 +13,16 @@ const populationCount = document.querySelector(".population-count").textContent
 populationCount.toLocaleString()
 
 // Variables du formulaire
-const selectCoutries = document.querySelector('.select-countries')
+const selectCountries = document.querySelector('.select-countries')
 
 // REST COUNTRIES API functions
-const filterCountries = async (selection) => {
-    let url = 'https://restcountries.com/v3.1/region/'+ selection
-    const response = await fetch(url)
-    const data = await response.json()
+const filterCountries = async () => { // Fonction asynchrone pour récupérer les données de l'API
+    const response = await fetch('https://restcountries.com/v3.1/all') // On stock la réponse de l'API dans une variable
+    const data = await response.json() // On stock les données de la réponse dans une variable
 
-    data.forEach(element => {
-        selectCountries.innerHTML += `<option>${element.name.common}</option>`
+    data.forEach(element => { // Initier une boucle pour récupérer les données de chaque pays
+        selectCountries.innerHTML += '<option data-cca2="' + element.cca2 + '">' + element.translations.fra.common + '</option>' // On injecte le nom dans le select ainsi que le code cca2 dans un data-attribute personnalisé
     });
 }
 
-const selectRegions = document.querySelector('.select-regions option').textContent
-
-filterCountries(selectRegions)
+filterCountries()

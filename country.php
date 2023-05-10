@@ -24,23 +24,19 @@ define('CAPITAL', COUNTRY[0]['capital'][0] );
 ?>
 
 <form method="post">
-    <p>
-        <label>Continent</label>
-        <select class="select-regions">
-            <option value="africa">africa</option>
-            <option value="europe">europe</option>
-            <option value="america">america</option>
-            <option value="asia">asia</option>
-            <option value="oceania">oceania</option>
-            <option value="antarctic">antarctic</option>
-        </select>
-    </p>
-    <p>
-        <label>Pays</label>
-        <select class="select-countries"></select>
-    </p>
-    <input type="submit" value="Afficher">
+    <fieldset>
+        <legend>Sélectionnez le pays de votre choix</legend>
+        <p>
+            <input name="select-countries" list="select-countries" autocomplete="on">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ffffff" d="M7 9H2V7h5v2zm0 3H2v2h5v-2zm13.59 7l-3.83-3.83c-.8.52-1.74.83-2.76.83c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5c0 1.02-.31 1.96-.83 2.75L22 17.59L20.59 19zM17 11c0-1.65-1.35-3-3-3s-3 1.35-3 3s1.35 3 3 3s3-1.35 3-3zM2 19h10v-2H2v2z"/></svg>
+            </button>
+        </p>
+    </fieldset>
+    <datalist id="select-countries" class="select-countries"></datalist>
 </form>
+
+
 <section class="country">
     <?php
         if(null !== FLAG) {

@@ -81,6 +81,53 @@ footer {
   padding: 1rem;
 }
 
+fieldset {
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 1vw;
+}
+
+legend {
+  background: #ffffff;
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+input[name=select-countries] {
+  width: 80%;
+  padding: 0.5rem;
+  border-radius: 3rem;
+  border: 0;
+}
+
+input[name=select-countries]:focus {
+  outline: none;
+}
+
+fieldset p {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem;
+  background: #ffffff;
+  border-radius: 3rem;
+}
+
+fieldset p button {
+  border: 0;
+  height: 35px;
+  width: 35px;
+  color: #ffffff;
+  background: linear-gradient(45deg, #e002e4, #016bcf);
+  border-radius: 3rem;
+}
+
+fieldset p button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Custom */
 /* -------------------------------------------------------------- */
 .cards {
