@@ -13,7 +13,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") // Vérifie que la requête est bien en
 {
     $req = $_REQUEST['select-countries'];
     header('Location: country.php?cca2='.$req);
-    echo $req;
 } else {
     // Récupération du paramètre GET cca2 (code pays) dans l'URL
     if(isset($_GET['cca2'])) 
@@ -68,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") // Vérifie que la requête est bien en
             <li>
                 <?php 
                     if(null !== POPULATION) {
-                        echo '<img src="/assets/img/users.svg" alt="Population ' . NAME . '">';
+                        echo '<img src="./assets/img/users.svg" alt="Population ' . NAME . '">';
                         echo '<p class="population-count">' . POPULATION . '</p>';
                     }
                 ?>
@@ -76,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") // Vérifie que la requête est bien en
             <li>
                 <?php 
                     if(null !== LANGUAGES) {
-                        echo '<img src="/assets/img/languages.svg" alt="Langue ' . NAME . '">';
+                        echo '<img src="./assets/img/languages.svg" alt="Langue ' . NAME . '">';
                         foreach( LANGUAGES as $language) {
                             echo $language . ' ';
                         }
@@ -87,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") // Vérifie que la requête est bien en
             <li>
                 <?php 
                     if(null !== CAPITAL) {
-                        echo '<img src="/assets/img/capital.svg" alt="Capital ' . NAME . '">';
+                        echo '<img src="./assets/img/capital.svg" alt="Capital ' . NAME . '">';
                         echo '<p>' . CAPITAL . '</p>';
                     }
                 ?>

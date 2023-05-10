@@ -23,7 +23,7 @@ function listCountriesByRegion($region)
     $countries = decodeJson($url);
     foreach ($countries as $country) {
         echo '<li style="background: url(\'' . $country['flags']['svg'] . '\')">'; // <li> d'ouverture
-        echo '<a href="/country.php?cca2=' . $country['cca2'] . '">'; // <a> d'ouverture
+        echo '<a href="./country.php?cca2=' . $country['cca2'] . '">'; // <a> d'ouverture
         echo $country['translations']['fra']['common']; // Nom du pays
         echo '</a>'; // </a> de fermeture
         echo '</li>'; // </li> de fermeture
