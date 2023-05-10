@@ -21,7 +21,7 @@ const filterCountries = async () => { // Fonction asynchrone pour récupérer le
     const data = await response.json() // On stock les données de la réponse dans une variable
 
     data.forEach(element => { // Initier une boucle pour récupérer les données de chaque pays
-        selectCountries.innerHTML += '<option data-cca2="' + element.cca2 + '">' + element.translations.fra.common + '</option>' // On injecte le nom dans le select ainsi que le code cca2 dans un data-attribute personnalisé
+        selectCountries.innerHTML += '<option value="' + element.cca2 + '">' + element.translations.fra.common + '</option>' // On injecte le nom dans le select ainsi que le code cca2 dans value personnalisé
     });
 }
 

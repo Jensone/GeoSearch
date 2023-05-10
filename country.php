@@ -7,19 +7,30 @@
 require 'functions/restcountries.php';
 include 'partials/_head.html.php'; 
 
-// Récupération du paramètre GET cca2 (code pays) dans l'URL
-if(isset($_GET['cca2'])) {
-    $cca2 = $_GET['cca2'];
-    getCountryByCodeName($cca2);
+// Traitement du formulaire
+
+if($_SERVER["REQUEST_METHOD"] == "POST") // Vérifie que la requête est bien en POST
+{
+    $req = $_REQUEST['select-countries'];
+    header('Location: country.php?cca2='.$req);
+    echo $req;
 } else {
-    echo 'Aucun pays sélectionné';
+    // Récupération du paramètre GET cca2 (code pays) dans l'URL
+    if(isset($_GET['cca2'])) 
+    {
+        $cca2 = $_GET['cca2'];
+        getCountryByCodeName($cca2);
+    } else {
+        echo 'Aucun pays sélectionné';
+    }
+
+    define('NAME', COUNTRY[0]['translations']['fra']['common'] );
+    define('FLAG', COUNTRY[0]['flags']['svg'] );
+    define('POPULATION', COUNTRY[0]['population'] );
+    define('LANGUAGES', COUNTRY[0]['languages'] );
+    define('CAPITAL', COUNTRY[0]['capital'][0] );
 }
 
-define('NAME', COUNTRY[0]['translations']['fra']['common'] );
-define('FLAG', COUNTRY[0]['flags']['svg'] );
-define('POPULATION', COUNTRY[0]['population'] );
-define('LANGUAGES', COUNTRY[0]['languages'] );
-define('CAPITAL', COUNTRY[0]['capital'][0] );
 
 ?>
 
@@ -27,13 +38,15 @@ define('CAPITAL', COUNTRY[0]['capital'][0] );
     <fieldset>
         <legend>Sélectionnez le pays de votre choix</legend>
         <p>
-            <input name="select-countries" list="select-countries" autocomplete="on">
+            <input name="select-countries" list="select-countries" autocomplete="on" required>
             <button type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ffffff" d="M7 9H2V7h5v2zm0 3H2v2h5v-2zm13.59 7l-3.83-3.83c-.8.52-1.74.83-2.76.83c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5c0 1.02-.31 1.96-.83 2.75L22 17.59L20.59 19zM17 11c0-1.65-1.35-3-3-3s-3 1.35-3 3s1.35 3 3 3s3-1.35 3-3zM2 19h10v-2H2v2z"/></svg>
             </button>
         </p>
     </fieldset>
-    <datalist id="select-countries" class="select-countries"></datalist>
+    <datalist id="select-countries" class="select-countries">
+        <option value=""></option>
+    </datalist>
 </form>
 
 
